@@ -21,7 +21,9 @@ namespace TravelOhioMVC.Models
         public string ReviewText { get; set; }
 
         [ForeignKey("City")]
+        [DisplayName("City or Metro Area")]
         public int CityID { get; set; }
+        [DisplayName("City or Metro Area")]
         public City City { get; set; }
     }
 }
