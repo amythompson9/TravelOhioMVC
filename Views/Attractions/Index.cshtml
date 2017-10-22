@@ -23,8 +23,9 @@
             @Html.DisplayFor(modelItem => item.LocalAttraction)
         </td>
         <td>
+            @Html.ActionLink("Read Reviews", "Index", "ReviewAttractions") |
+            @Html.ActionLink("Write a Review", "Create", "ReviewAttractions") |
             @Html.ActionLink("Edit", "Edit", new { id=item.AttractionID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AttractionID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AttractionID })
         </td>
     </tr>

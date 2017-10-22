@@ -14,19 +14,51 @@
         <th>
             @Html.DisplayNameFor(model => model.City.CityMetro)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attended)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReviewText)
+        </th>
+        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.City.CityMetro)
-        </td>
-        <td>
-            @Html.ActionLink("Read Reviews", "Details", "ReviewCity") |
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReviewCityID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReviewCityID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.City.CityMetro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attended)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewText)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReviewCityID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReviewCityID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReviewCityID })
+            </td>
+        </tr>
+    }
 
 </table>

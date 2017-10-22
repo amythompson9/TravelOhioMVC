@@ -9,10 +9,10 @@
 </head>
 <body>
     @*need drop down menu for nav bar - Read/Write Reviews that link to category*@
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="Home">Travel Ohio</a>
+                <a class="navbar-brand" href="Index">Travel Ohio</a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="dropdown">
@@ -44,6 +44,7 @@
                         <li>@Html.ActionLink("Write a Review", "Create", "Attractions")</li>
                     </ul>
                 </li>
+                <li>@Html.ActionLink("Read Reviews", "Details", "ReviewCities")</li>
             </ul>
         </div>
     </nav>

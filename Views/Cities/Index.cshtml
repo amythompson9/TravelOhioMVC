@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<TravelOhioMVC.Models.City>
 
 @{
-    ViewBag.Title = "Ohio Cities";
+    ViewBag.Title = "Index";
 }
 
 <h2>Ohio City Reviews</h2>
@@ -24,6 +24,7 @@
         </td>
         <td>
             @Html.ActionLink("Read Reviews", "Index", "ReviewCities") |
+            @Html.ActionLink("Write a Review", "Create", "ReviewCities") |
             @Html.ActionLink("Edit", "Edit", new { id=item.CityID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.CityID })
         </td>
