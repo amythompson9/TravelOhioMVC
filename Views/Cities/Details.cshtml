@@ -1,21 +1,20 @@
 ﻿@model TravelOhioMVC.Models.City
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Reviews";
 }
 
-<h2>Details</h2>
+<h2>Ohio City Reviews</h2>
 
 <div>
-    <h4>City</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CityMetro)
+            @Html.DisplayNameFor(model => model.ReviewCities)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CityMetro)
+            @Html.DisplayFor(model => model.ReviewCities)
         </dd>
 
     </dl>

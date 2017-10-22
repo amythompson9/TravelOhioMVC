@@ -24,7 +24,7 @@ namespace TravelOhioMVC
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/Bootswatch.css",
                       "~/Content/site.css"));
         }
     }

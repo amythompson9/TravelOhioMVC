@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<TravelOhioMVC.Models.City>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ohio Cities";
 }
 
-<h2>Index</h2>
+<h2>Ohio City Reviews</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -23,8 +20,8 @@
             @Html.DisplayFor(modelItem => item.CityMetro)
         </td>
         <td>
+            @Html.ActionLink("Read Reviews", "Index", "ReviewCities") |
             @Html.ActionLink("Edit", "Edit", new { id=item.CityID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CityID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.CityID })
         </td>
     </tr>
