@@ -9,8 +9,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
+@*<table class="table">*@
+    @*<tr>
         <th>
             @Html.DisplayNameFor(model => model.City.CityMetro)
         </th>
@@ -30,35 +30,43 @@
             @Html.DisplayNameFor(model => model.ReviewText)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
+        <row>
+            <div class ="reviewtitle">
+                    @Html.DisplayFor(modelItem => item.Title)
+            </div>
+        </row> 
+        <row>
+            <div col="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="city">
                 @Html.DisplayFor(modelItem => item.City.CityMetro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
+            </div>
+            <div col="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="rating">
                 @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
+            </div>
+        </row>
+        <row>
+            <div col="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="UserName">
+                @Html.DisplayFor(modelItem => item.UserName)
+            </div>   
+            <div col="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="Attended">
                 @Html.DisplayFor(modelItem => item.Attended)
-            </td>
-            <td>
+            </div>
+        </row>
+        <row>
+            <p class="ReviewText">
                 @Html.DisplayFor(modelItem => item.ReviewText)
-            </td>
+            </p>
+        </row>
+        <tr>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ReviewCityID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ReviewCityID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ReviewCityID })
             </td>
         </tr>
-    }
+            }
 
-</table>
+@*</table>*@

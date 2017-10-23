@@ -9,55 +9,39 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Festival.LocalFestival)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Attended)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReviewText)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Festival.LocalFestival)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Attended)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReviewText)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReviewFestivalID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReviewFestivalID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReviewFestivalID })
-        </td>
-    </tr>
-}
-
-</table>
+@foreach (var item in Model)
+    {
+        <row>
+            <div class="reviewtitle">
+                @Html.DisplayFor(modelItem => item.Title)
+            </div>
+        </row>
+        <row>
+            <div col="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="city">
+                @Html.DisplayFor(modelItem => item.Festival.LocalFestival)
+            </div>
+            <div col="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="rating">
+                @Html.DisplayFor(modelItem => item.Rating)
+            </div>
+        </row>
+        <row>
+            <div col="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="UserName">
+                @Html.DisplayFor(modelItem => item.UserName)
+            </div>
+            <div col="col-xs-4 col-sm-4 col-md-4 col-lg-4" class="Attended">
+                @Html.DisplayFor(modelItem => item.Attended)
+            </div>
+        </row>
+        <row>
+            <p class="ReviewText">
+                @Html.DisplayFor(modelItem => item.ReviewText)
+            </p>
+        </row>
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReviewFestivalID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReviewFestivalID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReviewFestivalID })
+            </td>
+        </tr>
+    }
